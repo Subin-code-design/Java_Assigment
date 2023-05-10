@@ -1,35 +1,27 @@
-import java.util.Scanner;
-
-public class sum_of_the_primenumber {
-    private static Scanner sc;
-    int j,i;
-    public static void main(String[] arg)
+public class sum_of_the_primenumber
+{
+    public static void main(String args[])
     {
-        int flag=0;
-        int j,i;
-        int sum=0;
-        System.out.println("Enter the Limit " );
-        sc=new Scanner(System.in);
-        int b= sc.nextInt();
-        for (i=2;i<b;i++)
+        int count, sum = 0;
+        for(int number = 1; number <= 200; number++)
         {
-            if (b%i==0)
+            count = 0;
+            for (int i = 2; i <= number/2; i++)
             {
-                flag=1;
+
+                if(number % i == 0)
+                {
+
+                    count++;
+                    break;
+                }
             }
-            else {
-                sum = sum + i;
-                System.out.println("Sum of Prime Number"+sum);
+            if(count == 0 && number != 1 )
+            {
+
+                sum = sum + number;
             }
         }
-//        if (flag==1)
-//        {
-//            System.out.println("Not a prime number");
-//        }
-//        else
-//        {
-//
-//            System.out.println("Prime number");
-//        }
+        System.out.println("The Sum of Prime Numbers from 1 to 200 is: " + sum);
     }
 }
